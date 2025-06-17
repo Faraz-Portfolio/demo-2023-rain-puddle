@@ -1,0 +1,45 @@
+{
+  "name": "r3f-ts-playground",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@react-three/drei": "^9.88.17",
+    "@react-three/fiber": "^8.15.11",
+    "@react-three/postprocessing": "^2.15.11",
+    "gl-noise": "^1.6.1",
+    "howler": "^2.2.4",
+    "motion": "^10.16.4",
+    "r3f-perf": "^7.1.2",
+    "react": "18.2.0",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1",
+    "simplex-noise": "^4.0.1",
+    "styled-components": "^6.1.1",
+    "three": "^0.158.0",
+    "three-custom-shader-material": "^5.4.0",
+    "three-stdlib": "^2.28.7"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.13.8",
+    "@types/howler": "^2.2.11",
+    "@types/react": "^18.0.34",
+    "@types/react-dom": "^18.0.11",
+    "@types/three": "^0.158.3",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
