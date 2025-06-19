@@ -218,7 +218,7 @@ export function UI() {
         }}
       >
         <a
-          href="https://github.com/Faraz-Portfolio/demo-2025-car-paint"
+          href="https://github.com/Faraz-Portfolio/demo-2023-rain-puddle"
           target="_blank"
           rel="noopener noreferrer"
           style={{
