@@ -1,40 +1,41 @@
 {
-  "name": "r3f-ts-playground",
+  "name": "demo-2023-rain-puddle",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@react-three/drei": "^9.88.17",
-    "@react-three/fiber": "^8.15.11",
-    "@react-three/postprocessing": "^2.15.11",
+    "@react-three/drei": "^10.3.0",
+    "@react-three/fiber": "^9.1.2",
+    "@react-three/postprocessing": "^3.0.4",
     "gl-noise": "^1.6.1",
     "howler": "^2.2.4",
     "motion": "^10.16.4",
-    "r3f-perf": "^7.1.2",
-    "react": "18.2.0",
+    "r3f-perf": "^7.2.3",
+    "react": "^19.1.0",
     "react-device-detect": "^2.2.3",
-    "react-dom": "18.2.0",
-    "react-scripts": "5.0.1",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
     "simplex-noise": "^4.0.1",
     "styled-components": "^6.1.1",
-    "three": "^0.158.0",
-    "three-custom-shader-material": "^5.4.0",
+    "three": "^0.177.0",
+    "three-custom-shader-material": "^6.3.7",
     "three-stdlib": "^2.28.7"
   },
   "devDependencies": {
-    "@babel/runtime": "7.13.8",
     "@types/howler": "^2.2.11",
     "@types/react": "^18.0.34",
     "@types/react-dom": "^18.0.11",
-    "@types/three": "^0.158.3",
-    "typescript": "^5.0.4"
+    "@types/three": "^0.177.0",
+    "@vitejs/plugin-react": "^4.5.2",
+    "typescript": "^5.0.4",
+    "vite": "^6.3.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "browserslist": [
     ">0.2%",

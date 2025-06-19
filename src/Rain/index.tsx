@@ -13,7 +13,7 @@ export function Rain({
   const rainSound = React.useMemo(
     () =>
       new Howl({
-        src: "/sounds/light-rain-109591.mp3",
+        src: "/demo-2023-rain-puddle/sounds/light-rain-109591.mp3",
         loop: true,
         volume: 0.5,
       }),
@@ -23,7 +23,7 @@ export function Rain({
   const nightSound = React.useMemo(
     () =>
       new Howl({
-        src: "/sounds/night-ambience-17064.mp3",
+        src: "/demo-2023-rain-puddle/sounds/night-ambience-17064.mp3",
         loop: true,
         volume: 0.5,
       }),

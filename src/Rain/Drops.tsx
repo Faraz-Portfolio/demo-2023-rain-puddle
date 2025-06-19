@@ -1,7 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import * as React from "react";
 import * as THREE from "three";
-import CSM from "../CSM";
+import CSM from "three-custom-shader-material";
 
 interface DropsProps {
   count?: number;
@@ -9,7 +9,7 @@ interface DropsProps {
 }
 
 export const Drops = React.forwardRef<THREE.InstancedMesh, DropsProps>(
-  ({ count = 2000, rainProgressRef }, ref) => {
+  ({ count = 1000, rainProgressRef }, ref) => {
     const dropsRef = React.useRef<THREE.InstancedMesh>(null!);
     const _dummy = React.useMemo(() => new THREE.Object3D(), []);
     const initialY = React.useMemo(() => new Float32Array(count).fill(0), []);
@@ -136,7 +136,11 @@ export const Drops = React.forwardRef<THREE.InstancedMesh, DropsProps>(
     });
 
     return (
-      <instancedMesh ref={dropsRef} args={[null, null, count]} renderOrder={2}>
+      <instancedMesh
+        ref={dropsRef}
+        args={[null!, null!, count]}
+        renderOrder={2}
+      >
         <planeGeometry args={[0.2, 0.3]} />
         <CSM
           key={vertexShader + fragmentShader}

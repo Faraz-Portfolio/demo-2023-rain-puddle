@@ -3,11 +3,12 @@ import { AdditiveBlending, MathUtils } from "three";
 
 export function Trash() {
   const maps = useTexture({
-    map: "/decals/trash/shmpulh_4K_Albedo.jpg",
-    alphaMap: "/decals/trash/shmpulh_4K_Opacity.jpg",
-    normalMap: "/decals/trash/shmpulh_4K_Normal.jpg",
-    roughnessMap: "/decals/trash/shmpulh_4K_Roughness.jpg",
-    aoMap: "/decals/trash/shmpulh_4K_AO.jpg",
+    map: "/demo-2023-rain-puddle/decals/trash/shmpulh_4K_Albedo.jpg",
+    alphaMap: "/demo-2023-rain-puddle/decals/trash/shmpulh_4K_Opacity.jpg",
+    normalMap: "/demo-2023-rain-puddle/decals/trash/shmpulh_4K_Normal.jpg",
+    roughnessMap:
+      "/demo-2023-rain-puddle/decals/trash/shmpulh_4K_Roughness.jpg",
+    aoMap: "/demo-2023-rain-puddle/decals/trash/shmpulh_4K_AO.jpg",
   });
 
   return (

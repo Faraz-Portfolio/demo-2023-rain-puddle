@@ -15,7 +15,7 @@ export function useMakeRain() {
         },
         {
           easing: "linear",
-          duration: 10,
+          duration: 5,
         }
       );
     }, []),

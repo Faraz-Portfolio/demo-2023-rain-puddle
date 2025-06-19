@@ -17,7 +17,7 @@ export function Thunder({ rainEnabled }: { rainEnabled: boolean }) {
   const thunderSounds = React.useMemo(
     () =>
       new Howl({
-        src: "/sounds/thunderstorm-14708.mp3",
+        src: "/demo-2023-rain-puddle/sounds/thunderstorm-14708.mp3",
         sprite: sprites as any,
       }),
     [sprites]
@@ -39,7 +39,7 @@ export function Thunder({ rainEnabled }: { rainEnabled: boolean }) {
 
     setTimeout(() => {
       makeThunder();
-    }, 10000);
+    }, 5 * 1000);
     const makeThunder = () => {
       if (!rainEnabled) return;
 

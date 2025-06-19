@@ -12,13 +12,3 @@ canvas {
   margin: 0;
   background-color: #00010b;
 }
-
-button {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  margin-bottom: 32px;
-  z-index: 100;
-}

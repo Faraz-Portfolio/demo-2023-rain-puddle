@@ -6,7 +6,10 @@ export function Lights({ rainEnabled }: { rainEnabled: boolean }) {
     <>
       <Environment frames={Infinity} resolution={128}>
         <Thunder rainEnabled={rainEnabled} />
-        <Environment files={"/shanghai_bund_2k.hdr"} background />
+        <Environment
+          files={"/demo-2023-rain-puddle/shanghai_bund_2k.hdr"}
+          background
+        />
       </Environment>
     </>
   );

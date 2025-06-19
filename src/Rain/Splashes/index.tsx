@@ -2,7 +2,7 @@ import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as React from "react";
 import * as THREE from "three";
-import CSM from "../../CSM";
+import CSM from "three-custom-shader-material";
 import { useSplashPositions } from "./useSplashPositions";
 
 interface SplashesProps {
@@ -13,8 +13,8 @@ interface SplashesProps {
 export const Splashes = React.forwardRef<
   THREE.InstancedMesh,
   React.PropsWithChildren<SplashesProps>
->(({ count = 2000, children, rainProgressRef }, ref) => {
-  const splashFlipBook = useTexture("/Splash.png");
+>(({ count = 1000, children, rainProgressRef }, ref) => {
+  const splashFlipBook = useTexture("/demo-2023-rain-puddle/Splash.png");
 
   const childrenGroupRef = React.useRef<THREE.Group>(null!);
   const splashRef = React.useRef<THREE.InstancedMesh>(null!);
@@ -109,7 +109,7 @@ export const Splashes = React.forwardRef<
     <>
       <instancedMesh
         ref={splashRef}
-        args={[null, null, count]}
+        args={[null!, null!, count]}
         frustumCulled={false}
         renderOrder={2}
       >
@@ -128,6 +128,7 @@ export const Splashes = React.forwardRef<
           fragmentShader={fragmentShader}
           uniforms={uniforms}
           transparent
+          blending={THREE.AdditiveBlending}
         />
       </instancedMesh>
       <group ref={childrenGroupRef}>{children}</group>

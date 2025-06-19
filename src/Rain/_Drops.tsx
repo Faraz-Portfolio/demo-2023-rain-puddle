@@ -2,7 +2,7 @@ import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import { createNoise2D } from "simplex-noise";
 import * as THREE from "three";
-import CSM from "../CSM";
+import CSM from "three-custom-shader-material";
 
 function getNoise(
   noiseFunc: ReturnType<typeof createNoise2D>,

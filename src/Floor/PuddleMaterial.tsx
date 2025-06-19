@@ -1,9 +1,10 @@
 import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+// @ts-ignore
 import { patchShaders } from "gl-noise/build/glNoise.m";
 import { useLayoutEffect, useMemo } from "react";
 import * as THREE from "three";
-import CSM from "../CSM";
+import CSM from "three-custom-shader-material";
 
 export function PuddleMaterial({
   rainProgressRef,
@@ -11,15 +12,18 @@ export function PuddleMaterial({
   rainProgressRef: React.MutableRefObject<number>;
 }) {
   const maps = useTexture({
-    map: "/road/aerial_asphalt_01_diff_2k.jpg",
-    normalMap: "/road/aerial_asphalt_01_nor_gl_2k.jpg",
-    roughnessMap: "/road/aerial_asphalt_01_rough_2k.jpg",
-    aoMap: "/road/aerial_asphalt_01_ao_2k.jpg",
+    map: "/demo-2023-rain-puddle/road/aerial_asphalt_01_diff_2k.jpg",
+    normalMap: "/demo-2023-rain-puddle/road/aerial_asphalt_01_nor_gl_2k.jpg",
+    roughnessMap: "/demo-2023-rain-puddle/road/aerial_asphalt_01_rough_2k.jpg",
+    aoMap: "/demo-2023-rain-puddle/road/aerial_asphalt_01_ao_2k.jpg",
   });
 
   useLayoutEffect(() => {
     for (const key in maps) {
+      // @ts-ignore
       maps[key].wrapS = maps[key].wrapT = THREE.RepeatWrapping;
+      // @ts-ignore
+
       maps[key].repeat.set(1, 1);
     }
   }, [maps]);
@@ -52,7 +56,7 @@ export function PuddleMaterial({
 			vec3 csm_PuddleNormal;
 			float csm_PuddleNormalMask;
 
-      #define MAX_RADIUS 3
+      #define MAX_RADIUS 2
       #define DOUBLE_HASH 0
       #define HASHSCALE1 .1031
       #define HASHSCALE3 vec3(.1031, .1030, .0973)
@@ -76,7 +80,7 @@ export function PuddleMaterial({
       vec3 getRipples(vec2 uv) {
         vec2 p0 = floor(uv);
 
-        float time = uTime * 2.0;
+        float time = uTime * 3.0;
 
         vec2 circles = vec2(0.);
         for (int j = -MAX_RADIUS; j <= MAX_RADIUS; ++j) {
